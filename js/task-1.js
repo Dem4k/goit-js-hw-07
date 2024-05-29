@@ -1,3 +1,9 @@
-// Ссчитает и выведет в консоль количество категорий в  ul#categories, то есть элементов  li.item.
-// Для каждого элемента  li.item в списке  ul#categoriesнайдет и выведет в консоль
-// текст заголовка элемента (тега  <h2>) и количество элементов в категории (всех  <li>, вложенных в него).
+const categories = document.querySelector("#categories");
+const items = categories.querySelectorAll("li.item");
+console.log(items.length);
+items.forEach((item) => {
+  const header = item.querySelector("h2").textContent;
+  const subItems = item.querySelectorAll("ul li");
+  console.log(header);
+  console.log(subItems.length);
+});
