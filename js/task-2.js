@@ -16,13 +16,21 @@ const images = [
     alt: "Alpine Spring Meadows",
   },
   {
-    url: "https: //cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
+    url: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
     alt: "Nature Landscape",
   },
   {
-    url: "https://cdn.pixabay.com/ photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
+    url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
     alt: "Lighthouse Coast Sea",
   },
 ];
 
 const gallery = document.querySelector(".gallery");
+const galleryItems = images
+  .map(
+    ({ url, alt }) => `<li class="gallery-item">
+<img src="${url}" alt="${alt}">
+</li>`
+  )
+  .join("");
+gallery.insertAdjacentHTML("beforeend", galleryItems);
